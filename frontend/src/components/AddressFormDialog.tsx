@@ -153,7 +153,7 @@ export function AddressFormDialog({
           <form
             id="address-form"
             onSubmit={form.handleSubmit(onSubmit)}
-            className="grid grid-cols-2 gap-x-4 gap-y-3"
+            className="grid grid-cols-2 gap-x-4 gap-y-5 py-2"
           >
             {/* ชื่อ */}
             <FormField

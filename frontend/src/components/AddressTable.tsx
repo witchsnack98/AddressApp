@@ -112,11 +112,11 @@ export function AddressTable({
 }: AddressTableProps) {
   if (addresses.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center gap-3 py-24 text-center">
-        <div className="rounded-full bg-muted p-4">
+      <div className="flex min-h-[400px] flex-col items-center justify-center gap-3 rounded-xl border border-dashed bg-card/50 text-center animate-in fade-in-50">
+        <div className="flex size-14 items-center justify-center rounded-full bg-muted">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="size-8 text-muted-foreground"
+            className="size-6 text-muted-foreground"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -134,12 +134,14 @@ export function AddressTable({
             />
           </svg>
         </div>
-        <p className="text-sm font-medium text-muted-foreground">
-          ยังไม่มีที่อยู่ในระบบ
-        </p>
-        <p className="text-xs text-muted-foreground">
-          กดปุ่ม &quot;เพิ่มที่อยู่ใหม่&quot; เพื่อเริ่มต้น
-        </p>
+        <div className="space-y-1">
+          <p className="text-base font-semibold text-foreground">
+            ยังไม่มีที่อยู่ในระบบ
+          </p>
+          <p className="text-sm text-muted-foreground max-w-[250px] mx-auto">
+            กดปุ่ม &quot;เพิ่มที่อยู่ใหม่&quot; ด้านบนเพื่อเริ่มต้นเพิ่มข้อมูลเข้าสู่ระบบ
+          </p>
+        </div>
       </div>
     )
   }

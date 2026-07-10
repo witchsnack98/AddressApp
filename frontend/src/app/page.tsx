@@ -56,31 +56,37 @@ export default function HomePage() {
       {/* ------------------------------------------------------------------ */}
       {/* Header */}
       {/* ------------------------------------------------------------------ */}
-      <header className="sticky top-0 z-10 border-b bg-background/80 backdrop-blur-sm">
-        <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
-          <MapPinIcon className="size-5 text-primary" />
-          <h1 className="text-base font-semibold tracking-tight">
-            ระบบจัดการที่อยู่
+      <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center rounded-md bg-primary/10 p-2">
+            <MapPinIcon className="size-5 text-primary" />
+          </div>
+          <h1 className="text-sm font-semibold uppercase tracking-wider text-foreground">
+            Address System
           </h1>
-          <span className="ml-1 inline-flex h-5 items-center rounded-full bg-primary/10 px-2 text-[11px] font-medium text-primary">
-            {addresses.length} รายการ
-          </span>
+          <div className="ml-auto flex items-center gap-2">
+            <span className="inline-flex h-6 items-center rounded-full bg-secondary px-2.5 text-xs font-medium text-secondary-foreground ring-1 ring-inset ring-secondary-foreground/10">
+              {addresses.length} รายการ
+            </span>
+          </div>
         </div>
       </header>
 
       {/* ------------------------------------------------------------------ */}
       {/* Main content */}
       {/* ------------------------------------------------------------------ */}
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-12 lg:px-8">
         {/* Toolbar */}
-        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <h2 className="text-xl font-semibold">รายการที่อยู่</h2>
-            <p className="mt-0.5 text-sm text-muted-foreground">
-              จัดการข้อมูลที่อยู่ทั้งหมดของคุณในที่เดียว
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="space-y-1">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">รายการที่อยู่</h2>
+            <p className="text-base text-muted-foreground">
+              จัดการข้อมูลที่อยู่และสถานที่จัดส่งทั้งหมดของคุณ
             </p>
           </div>
-          <AddressFormDialog onSuccess={handleSuccess} />
+          <div className="shrink-0">
+            <AddressFormDialog onSuccess={handleSuccess} />
+          </div>
         </div>
 
         {/* States */}
